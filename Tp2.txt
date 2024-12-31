@@ -1,0 +1,38 @@
+#lang racket
+;; EXO1
+(define (f1 x)
+  (if(= x 0)
+     0
+     (/ (- (* 3 x)4) (sqrt (+ (* x x)1)))))
+(f1 0)
+(f1 1)
+
+;; EXO2
+(define (f2 n)
+  (if (< n 0)
+      0
+      (+ (* n n n n)(f2(- n 1)))))
+(f2 -10)
+(f2 3)
+(f2 5)
+
+;;EXO3
+(define (f3 n)
+   (if (= n 1)
+       1
+      (if (= (modulo n 2) 1)
+           (* n(f3(- n 2)))
+           (f3(- n 1)))))
+(f3 5)
+(f3 8)
+
+;;EXO4
+(define (f4 a b)
+  (if (= b 0)
+      a
+      (f4 (- a 1) (- b 1))))
+
+(f4 27 12)
+(f4 34 7)
+
+
